@@ -124,7 +124,6 @@
                 <mxCell id="48" value="users_id" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;labelBorderColor=none;" vertex="1" parent="46">
                     <mxGeometry y="56" width="240" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="49" value="Item 3" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;labelBorderColor=none;" vertex="1" parent="46">
                     <mxGeometry y="86" width="240" height="30" as="geometry"/>
                 </mxCell>
             </root>
