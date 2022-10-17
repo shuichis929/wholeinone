@@ -1,0 +1,39 @@
+<%= render "shared/header" %>
+
+<%# ユーザー情報 %>
+<div class='user-show'>
+  <div class='user-box'>
+    <h1>
+      <%= current_user.nickname %>のユーザーページ
+    </h1>
+    <div class='profile-image'>
+      <% if @user.avatar.present? %>
+        <%= image_tag current_user.avatar %>
+      <% else %>
+        <%= image_tag "profile_default_picture.png" %>
+      <% end %>
+    </div>
+  </div>
+  <div class="user-info-box">
+  <table class="info-table">
+      <tbody>
+        <tr>
+          <th class="info-item">ニックネーム</th>
+          <td class="info-value"><%= current_user.nickname %></td>
+        </tr>
+        <tr>
+          <th class="info-item">名前</th>
+          <td class="detail-value"><%= current_user.name %></td>
+        </tr>
+        <tr>
+          <th class="info-item">自己紹介</th>
+          <td class="detail-value"><%= current_user.introduction %></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <%= link_to 'プロフィールの編集', edit_user_path , class:'profile-btn' %>
+
+</div>
+
+<%# /ユーザー情報 %>
