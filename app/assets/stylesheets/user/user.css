@@ -1,0 +1,99 @@
+.user-show {
+  margin: 40px 0 0 40px;
+}
+
+.user-title-bar {
+  display: flex;
+}
+
+.user-title {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.profile-btn {
+  margin-top: 5px;
+  margin-left: 30px;
+}
+
+.profile-skyblue-btn {
+  text-decoration: none;
+  background: skyblue;
+  border: 1px solid skyblue;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 10px;
+  padding: 5px;
+  color: white;
+}
+
+.user-box {
+  display: flex;
+  margin-top: 20px;
+}
+
+.user-info-box {
+  margin-left: 60px;
+  width: 500px;
+}
+
+.info-table {
+  width: 100%;
+}
+
+.info-user{
+  text-align: left;
+  font-weight: bold;
+  border: 1px solid grey;
+  width: 30%;
+  padding: 15px;
+}
+.detail-value{
+  text-align: left;
+  border: 1px solid grey;
+  width: 100%;
+  padding: 16px 8px;
+}
+
+.info-user-description {
+  text-align: left;
+  font-weight: bold;
+  border: 1px solid grey;
+  width: 30%;
+  height: 250px;
+  padding: 15px ;
+  vertical-align: top;
+}
+
+.detail-value-description {
+  text-align: left;
+  border: 1px solid grey;
+  width: 100%;
+  padding: 16px 8px;
+  vertical-align: top;
+}
+
+.user_edit-btn {
+  width: 50%;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.user_edit-blue-btn {
+  width: 100%;
+  height: 50px;
+  background: blue;
+  border: 1px solid blue;
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+  margin-bottom: 4vh;
+}
+
+.user_edit-back-btn {
+  background: #aaa;
+  border: 1px solid #aaa;
+  color: #fff;
+  padding: 15px 35%;
+  text-decoration: none;
+}

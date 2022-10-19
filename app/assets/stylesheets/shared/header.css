@@ -9,6 +9,10 @@
 .logo {
   font-size: 40px;
   padding-left: 40px;
+}
+
+.logo-text {
+  text-decoration: none;
   color: white;
 }
 
