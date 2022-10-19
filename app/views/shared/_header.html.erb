@@ -6,7 +6,7 @@
    <div class='nav'>
     <div class='lists'>
       <% if user_signed_in? %>
-        <%= link_to current_user.nickname, user_path(:id), class: "user-nickname" %>
+        <%= link_to current_user.nickname, user_path(current_user[:id]), class: "user-nickname" %>
         <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %>
       <% else %>
         <%= link_to 'ログイン', new_user_session_path, class: "login" %>
