@@ -71,8 +71,9 @@
       <br>に同意したものとみなします
     </h2>
   </div>
-  <div class='register-btn'>
-    <%= f.submit "ユーザー登録" ,class:"register-blue-btn" %>
+  <div class='user_edit-btn'>
+    <%= f.submit "編集完了" ,class:"user_edit-blue-btn" %>
+    <%= link_to 'もどる', user_path(params[:id]), class:"user_edit-back-btn" %>
   </div>
 </div>
 <% end %>

@@ -72,3 +72,28 @@
   padding: 16px 8px;
   vertical-align: top;
 }
+
+.user_edit-btn {
+  width: 50%;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.user_edit-blue-btn {
+  width: 100%;
+  height: 50px;
+  background: blue;
+  border: 1px solid blue;
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+  margin-bottom: 4vh;
+}
+
+.user_edit-back-btn {
+  background: #aaa;
+  border: 1px solid #aaa;
+  color: #fff;
+  padding: 15px 35%;
+  text-decoration: none;
+}
