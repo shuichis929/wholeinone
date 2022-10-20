@@ -1,6 +1,8 @@
 class PostsController < ApplicationController
-  
+  before_action :authenticate_user!, only: [:new]
+
   def index
+    @post = Post.order('created_at DESC')
   end
 
   def new
@@ -18,6 +20,6 @@ class PostsController < ApplicationController
 
   private
   def post_params
-    params.require(:post).permit(:image, :text).merge(user_id: current_user.id)
+    params.require(:post).permit(:post_image, :text).merge(user_id: current_user.id)
   end
 end

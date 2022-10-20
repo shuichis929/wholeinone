@@ -2,6 +2,18 @@
 <div class='main'>
   <div class='post-bar'>
     <%= link_to '投稿する', new_post_path %>
+    <div class='post-contents'>
+      <h2 class='title'>新規投稿一覧</h2>
+      <ul class='post-lists'>
+        <% @post.each do |post| %>
+        <li class='list'>
+          <div class='post-img-content'>
+            <%= image_tag post.post_image, class:"post-img" %>
+          </div>
+        </li>
+        <% end %>
+      </ul>
+    </div>
   </div>
   <div class='item-bar'></div>
   <div class='room-bar'></div>
