@@ -2,11 +2,11 @@
 <div class="contents-row">
   <div class="container">
     <h3>新規投稿</h3>
-    <%= form_with(model: @post, local: true) do |form| %>
+    <%= form_with(model: @post, url: posts_path, local: true) do |form| %>
       <div class="field">
         <label class="post-picture-title">投稿する写真</label>
         <div class='post-picture'>
-          <%= form.file_field :image, class:'select-picture',id:"post_image" %>
+          <%= form.file_field :post_image, class:'select-picture',id:"post_image" %>
           <div id="picture-list"></div>
         </div>
       </div>
