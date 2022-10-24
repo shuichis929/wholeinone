@@ -32,6 +32,7 @@
 .post-more {
   height: 70px;
   display: flex;
+  justify-content: center;
 }
 
 .post-edit {
@@ -42,3 +43,11 @@
   margin: 15px;
 }
 
+.post-delete {
+  border: 3px solid red;
+  text-decoration: none;
+  color: red;
+  font-weight: bold;
+  padding: 10px 60px;
+  margin: 15px 15px 15px 50px;
+}
