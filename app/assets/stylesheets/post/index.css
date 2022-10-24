@@ -1,0 +1,49 @@
+.post-contents {
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+
+.post-lists {
+  display: flex;
+  margin: 0 0 0 40px;
+}
+
+.post-list {
+  background-color: white;
+  height: 510px;
+  width: 350px;
+  margin: 0 10px;
+  border: 1px solid lightgray;
+}
+
+.post-img-content{
+  border-bottom: 1px solid lightgray;
+}
+
+.post-user {
+  display: flex;
+  margin: 8px 0 0 15px;
+}
+
+.post-user-default-img {
+  border-radius: 20px;
+
+}
+
+.post-user-img {
+  border-radius: 20px;
+}
+
+.post-user-nickname {
+  margin: auto 0;
+}
+
+.post-nickname{
+  text-decoration: none;
+  color: black;
+  margin-left: 10px;
+}
+
+.text-box {
+  padding: 7px 7px 0;
+}
