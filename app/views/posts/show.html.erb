@@ -1,0 +1,34 @@
+<%= render "shared/header" %>
+<div class='post-show-main'>
+  <div class='post-show-box'>
+    <div class='post-show-leftbox'>
+      <div class='post-show-user'>
+        <div class='post-user-avatar'>
+          <% if @post.user.avatar.present? %>
+            <%= link_to image_tag(@post.user.avatar, size:'50x50', class:"post-user-img"), user_path(@post.user_id) %>
+          <% else %>
+            <%= image_tag "profile_default_picture.png", size:'50x50', class:'post-user-default-img' %>
+          <% end %>
+        </div>
+        <div class='post-user-nickname'>
+            <%= link_to @post.user.nickname, user_path(@post.user_id), class:"post-nickname" %>
+        </div>
+      </div>
+      <div class='post-img-content'>
+        <%= image_tag @post.post_image, size:'450x450', class:"post-img" %>
+      </div>
+      <div class='text-box'>
+        <%= @post.text %>
+      </div>
+    </div>
+    <div class='post-show-rightbox'>
+      <% if user_signed_in? && current_user.id == @post.user_id %>
+      <div class="more">
+      </div>
+      <% end %>
+      <div class='post-comments'>
+        <h1>コメント一覧</h1>
+      </div>
+    </div>
+  </div>
+</div>
