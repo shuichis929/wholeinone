@@ -1,0 +1,20 @@
+<%= render "shared/header" %>
+<div class="contents-row">
+  <div class="container">
+    <h3>投稿編集</h3>
+    <%= form_with(model: @post, url: post_path, local: true, method: :patch) do |form| %>
+      <div class="field">
+        <label class="post-picture-title">投稿する写真</label>
+        <div class='post-picture'>
+          <%= form.file_field :post_image, class:'select-picture',id:"post_image" %>
+          <div id="picture-list"></div>
+        </div>
+      </div>
+      <%= form.text_area :text, placeholder: "テキスト", rows: "10", class:'post-textarea' %>
+      <%= form.submit "編集完了", class:'post-btn' %>
+      <div class='post_edit-back'>
+      <%= link_to 'もどる', post_path(params[:id]), class:"post_edit-back-btn" %>
+      </div>
+    <% end %>
+  </div>
+</div>

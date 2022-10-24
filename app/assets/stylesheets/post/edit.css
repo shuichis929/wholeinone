@@ -1,0 +1,12 @@
+.post_edit-back-btn {
+  background: #aaa;
+  border: 1px solid #aaa;
+  color: #fff;
+  padding: 15px 35%;
+  text-decoration: none;
+}
+
+.post_edit-back {
+  margin-top: 30px;
+  text-align: center;
+}
