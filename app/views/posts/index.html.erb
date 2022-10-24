@@ -7,26 +7,28 @@
       <div class='post-content'>
         <ul class='post-lists'>
           <% @post.each do |post| %>
-          <li class='post-list'>
-            <div class='post-img-content'>
-              <%= image_tag post.post_image, size:'348x350', class:"post-img" %>
-            </div>
-            <div class='post-user'>
-              <div class='post-user-avatar'>
-                <% if post.user.avatar.present? %>
-                  <%= link_to image_tag(post.user.avatar, size:'35x35', class:"post-user-img"), user_path(post.user_id) %>
-                <% else %>
-                  <%= image_tag "profile_default_picture.png", size:'35x35', class:'post-user-default-img' %>
-                <% end %>
+          <%= link_to post_path(post.id) do %>
+            <li class='post-list'>
+              <div class='post-img-content'>
+                <%= image_tag post.post_image, size:'348x350', class:"post-img" %>
               </div>
-              <div class='post-user-nickname'>
-                  <%= link_to post.user.nickname, user_path(post.user_id), class:"post-nickname" %>
+              <div class='post-user'>
+                <div class='post-user-avatar'>
+                  <% if post.user.avatar.present? %>
+                    <%= link_to image_tag(post.user.avatar, size:'35x35', class:"post-user-img"), user_path(post.user_id) %>
+                  <% else %>
+                    <%= image_tag "profile_default_picture.png", size:'35x35', class:'post-user-default-img' %>
+                  <% end %>
+                </div>
+                <div class='post-user-nickname'>
+                    <%= link_to post.user.nickname, user_path(post.user_id), class:"post-nickname" %>
+                </div>
               </div>
-            </div>
-            <div class='text-box'>
-              <%= post.text %>
-            </div>
-          </li>
+              <div class='text-box'>
+                <%= post.text %>
+              </div>
+            </li>
+            <% end %>
           <% end %>
         </ul>
       </div>
