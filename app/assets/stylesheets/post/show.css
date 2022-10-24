@@ -29,3 +29,16 @@
   display: flex;
 }
 
+.post-more {
+  height: 70px;
+  display: flex;
+}
+
+.post-edit {
+  background-color: blue;
+  text-decoration: none;
+  color: white;
+  padding: 10px 60px;
+  margin: 15px;
+}
+
