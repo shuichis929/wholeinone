@@ -24,8 +24,8 @@
     <div class='post-show-rightbox'>
       <% if user_signed_in? && current_user.id == @post.user_id %>
       <div class="post-more">
-        <%= link_to '編集', edit_post_path(@post.id), class:'post-edit'%>
-        <%= link_to '削除', post_path(@post.id), method: :delete, class:'post-delete'%>
+        <%= link_to '投稿の編集', edit_post_path(@post.id), class:'post-edit'%>
+        <%= link_to '削除する', post_path(@post.id), method: :delete, class:'post-delete'%>
       </div>
       <% end %>
       <div class='post-comments'>
