@@ -9,7 +9,7 @@ class Item < ApplicationRecord
   belongs_to :prefecture
   belongs_to :days_to_ship
 
-  validates :image, presence: true
+  validates :item_image, presence: true
   validates :item_name, presence: true
   validates :description, presence: true
   validates :price, presence: true
