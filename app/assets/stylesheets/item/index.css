@@ -1,0 +1,17 @@
+.item-top-bar {
+  width: 100%;
+  height: 10%;
+  background-color: white;
+}
+
+.item-bar-main {
+  width: 100%;
+  height: 90%;
+  display: flex;
+}
+
+.item-bar-left {
+  background-color: aqua;
+  height: 100%;
+  width: 300px;
+}
