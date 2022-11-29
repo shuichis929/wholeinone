@@ -1,0 +1,77 @@
+<%= render "shared/header" %>
+
+<div class="item-show">
+  <div class="item-box">
+    <h2 class="name">
+      <%= @item.item_name %>
+    </h2>
+    <div class="item-img-content">
+      <%= image_tag @item.item_image ,class:"item-box-img" %>
+    </div>
+    <div class="item-price-box">
+      <span class="item-price-show">
+        ¥<%= @item.price %>
+      </span>
+      <span class="item-postage">
+        <%= @item.delivery_charge.name %>
+      </span>
+    </div>
+
+    <div class="item-explain-box">
+      <span><%= @item.description %></span>
+    </div>
+
+    <% if user_signed_in? && current_user.id == @item.user_id %>
+      <%# unless @item.purchase.present? %>
+        <%= link_to "商品の編集", method: :get, class:"item-red-btn" %>
+        <p class="or-text">or</p>
+        <%= link_to "削除", method: :delete, class:"item-destroy" %>
+      <%# end %>
+
+    <% elsif user_signed_in? && current_user.id != @item.user_id %>
+      <%# unless @item.purchase.present? %>
+        <%= link_to "購入画面に進む", class:"item-red-btn"%>
+      <%# end %>
+    <% end %>
+
+    <table class="detail-table">
+      <tbody>
+        <tr>
+          <th class="detail-item">出品者</th>
+          <td class="detail-value-user">
+            <div class='item-user-avatar'>
+              <% if @item.user.avatar.present? %>
+                <%= link_to image_tag(@item.user.avatar, size:'35x35', class:"item-user-img"), user_path(@item.user_id) %>
+              <% else %>
+                <%= image_tag "profile_default_picture.png", size:'35x35', class:'item-user-default-img' %>
+              <% end %>
+            </div>
+            <div class='item-user-nickname'>
+                <%= link_to @item.user.nickname, user_path(@item.user_id), class:"item-nickname" %>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <th class="detail-item">カテゴリー</th>
+          <td class="detail-value-show"><%= @item.category.name %></td>
+        </tr>
+        <tr>
+          <th class="detail-item">商品の状態</th>
+          <td class="detail-value-show"><%= @item.condition.name %></td>
+        </tr>
+        <tr>
+          <th class="detail-item">配送料の負担</th>
+          <td class="detail-value-show"><%= @item.delivery_charge.name %></td>
+        </tr>
+        <tr>
+          <th class="detail-item">発送元の地域</th>
+          <td class="detail-value-show"><%= @item.prefecture.name %></td>
+        </tr>
+        <tr>
+          <th class="detail-item">発送日の目安</th>
+          <td class="detail-value-show"><%= @item.days_to_ship.name %></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

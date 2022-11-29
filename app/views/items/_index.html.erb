@@ -1,24 +1,24 @@
 <div class='item-lists'>
   <% @item.each do |item| %>
     <div class='item-list'>
-      <div class='item-img-content'>
-        <div class='item-user'>
-          <div class='item-user-avatar'>
-            <% if item.user.avatar.present? %>
-              <%= link_to image_tag(item.user.avatar, size:'35x35', class:"item-user-img"), user_path(item.user_id) %>
-            <% else %>
-              <%= image_tag "profile_default_picture.png", size:'35x35', class:'item-user-default-img' %>
-            <% end %>
-          </div>
-          <div class='item-user-nickname'>
-              <%= link_to item.user.nickname, user_path(item.user_id), class:"item-nickname" %>
-          </div>
+      <div class='item-user'>
+        <div class='item-user-avatar'>
+          <% if item.user.avatar.present? %>
+            <%= link_to image_tag(item.user.avatar, size:'35x35', class:"item-user-img"), user_path(item.user_id) %>
+          <% else %>
+            <%= image_tag "profile_default_picture.png", size:'35x35', class:'item-user-default-img' %>
+          <% end %>
         </div>
-        <%= image_tag item.item_image, size:'348x350', class:"item-img" %>
-        <div class='item-price'>
-          <span>¥<%= item.price %></span>
+        <div class='item-user-nickname'>
+            <%= link_to item.user.nickname, user_path(item.user_id), class:"item-nickname" %>
         </div>
       </div>
+      <%= link_to item_path(item.id) do %>
+      <%= image_tag item.item_image, size:'348x350', class:"item-img" %>
+      <div class='item-price'>
+        <span>¥<%= item.price %></span>
+      </div>
+      <% end %>
     </div>
   <% end %>
 </div>
