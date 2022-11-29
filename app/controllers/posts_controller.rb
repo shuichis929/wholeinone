@@ -3,6 +3,7 @@ class PostsController < ApplicationController
 
   def index
     @post = Post.order('created_at DESC')
+    @item = Item.order('created_at DESC')
   end
 
   def new
