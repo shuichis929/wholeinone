@@ -1,36 +1,36 @@
 <%= render "shared/header" %>
+
 <div class='main'>
   <div class='post-bar'>
     <%= link_to '投稿する', new_post_path %>
     <h2 class='title'>新規投稿一覧</h2>
     <div class='post-contents'>
       <div class='post-content'>
-        <ul class='post-lists'>
+        <div class='post-lists'>
           <% @post.each do |post| %>
-          <%= link_to post_path(post.id) do %>
-            <li class='post-list'>
-              <div class='post-img-content'>
-                <%= image_tag post.post_image, size:'348x350', class:"post-img" %>
-              </div>
-              <div class='post-user'>
-                <div class='post-user-avatar'>
-                  <% if post.user.avatar.present? %>
-                    <%= link_to image_tag(post.user.avatar, size:'35x35', class:"post-user-img"), user_path(post.user_id) %>
-                  <% else %>
-                    <%= image_tag "profile_default_picture.png", size:'35x35', class:'post-user-default-img' %>
-                  <% end %>
+            <%= link_to post_path(post.id) do %>
+              <div class='post-list'>
+                <div class='post-img-content'>
+                  <%= image_tag post.post_image, size:'348x350', class:"post-img" %>
                 </div>
-                <div class='post-user-nickname'>
-                    <%= link_to post.user.nickname, user_path(post.user_id), class:"post-nickname" %>
+                <div class='post-user'>
+                  <div class='post-user-avatar'>
+                    <% if post.user.avatar.present? %>
+                      <%= link_to image_tag(post.user.avatar, size:'35x35', class:"post-user-img"), user_path(post.user_id) %>
+                    <% else %>
+                      <%= image_tag "profile_default_picture.png", size:'35x35', class:'post-user-default-img' %>
+                    <% end %>
+                  </div>
+                  <div class='post-user-nickname'>
+                      <%= link_to post.user.nickname, user_path(post.user_id), class:"post-nickname" %>
+                  </div>
+                </div>
+                <div class='text-box'>
+                  <%= post.text %>
                 </div>
               </div>
-              <div class='text-box'>
-                <%= post.text %>
-              </div>
-            </li>
             <% end %>
           <% end %>
-        </ul>
       </div>
     </div>
   </div>
@@ -39,18 +39,8 @@
       <%= link_to '出品する', new_item_path %>
     </div>
     <div class='item-bar-main'>
-      <div class='item-bar-left'></div>
-      <div class='item-bar-right'>
-        <div class='item-contents'>
-          <div class='item-content'>
-            <div class='item-lists'>
-              
-            </div>
-          </div>
-        </div> 
-      </div>
+      <%= render partial: 'items/index' %>
     </div>
   </div>
   <div class='room-bar'></div>
 </div>
-<%= render "shared/footer" %>
