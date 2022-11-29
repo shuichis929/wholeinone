@@ -17,6 +17,10 @@
   align-items: center;
 }
 
+.item-img-content {
+  position: relative;
+}
+
 .item-box>.name {
   text-align: center;
   font-weight: bold;
