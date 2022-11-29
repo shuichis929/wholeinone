@@ -18,11 +18,15 @@
 .item-list{
   position: relative;
   margin-left: 20px;
+  height: 350px;
+  width: 400px;
 }
 
 .item-user{
   display: flex;
   position: absolute;
+  top: 0px;
+  left: 0px;
   background-color: lightgray;
   padding: 2px;
   opacity: 0.8;
@@ -46,6 +50,7 @@
 }
 
 .item-price{
+  color: black;
   position: absolute;
   top: 310px;
   background-color: lightgray;
