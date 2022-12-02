@@ -14,6 +14,13 @@
         </div>
       </div>
       <%= link_to item_path(item.id) do %>
+
+      <% if item.purchase.present? %>
+      <div class='sold-out'>
+        <span>Sold Out!!</span>
+      </div>
+      <% end %>
+
       <%= image_tag item.item_image, size:'348x350', class:"item-img" %>
       <div class='item-price'>
         <span>¥<%= item.price %></span>

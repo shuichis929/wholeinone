@@ -7,6 +7,7 @@ class User < ApplicationRecord
   has_one_attached :avatar
   has_many :posts
   has_many :items
+  has_many :purchases
 
   with_options presence: true do
     validates :nickname

@@ -20,6 +20,7 @@ class ItemsController < ApplicationController
 
   def edit
     @item = Item.find(params[:id])
+    redirect_to root_path unless current_user.id == @item.user_id && @item.purchase.blank?
   end
 
   def update
