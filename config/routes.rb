@@ -6,6 +6,6 @@ Rails.application.routes.draw do
   resources :items do
     resources :purchases, only: [:index, :create]
   end
-  resources :rooms, only: [:new, :create, :destroy]
+  resources :rooms, only: [:index, :new, :create, :destroy]
 
 end
