@@ -5,6 +5,8 @@ class CreateMessages < ActiveRecord::Migration[6.0]
       t.references :room, null: false, foreign_key: true
       t.references :user, null: false, foreign_key: true
       t.timestamps
+
+      drop_table :messages
     end
   end
 end
