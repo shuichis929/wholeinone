@@ -9,6 +9,7 @@ class User < ApplicationRecord
   has_many :items
   has_many :purchases
   has_many :rooms
+  has_many :messages
 
   with_options presence: true do
     validates :nickname
