@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   resources :items do
     resources :purchases, only: [:index, :create]
   end
-  resources :rooms, only: [:index, :new, :create, :show]
+  resources :rooms, only: [:index, :new, :create, :show] do
+    resources :messages, only: [:index, :create]
+  end
 
 end
