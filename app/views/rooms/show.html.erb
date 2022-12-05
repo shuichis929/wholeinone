@@ -1,0 +1,28 @@
+<%= render "shared/header" %>
+
+<div class='room-main'>
+  <div class='room-main-box'>
+    <div class='room-left-box'>
+      <div class='room-show-name'>
+        <%= @room.room_name %>
+      </div>
+      <div class='room-show-explanation'>
+        <%= @room.explanation %>
+      </div>
+      <div class='room-exit'>
+      <%= link_to 'ルームから退出', root_path, class:'room-exit-btn' %>
+      </div>
+    </div>
+    <div class='room-right-box'>
+      <div class='messages'>
+        <%= render partial: 'messages/message', collection: @messages %>
+      </div>
+      <%= form_with model: [@room, @message], class: 'message-form', local: true do |f| %>
+        <div class="form-input">
+          <%= f.text_field :content, class: 'form-message', placeholder: 'テキストを入力' %>
+        </div>
+        <%= f.submit '送信', class: 'form-submit' %>
+      <% end %>
+    </div>
+  </div>
+</div>

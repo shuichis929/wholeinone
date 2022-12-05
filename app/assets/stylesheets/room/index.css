@@ -1,9 +1,39 @@
-.create-room{
+.room-top-bar{
+  height: 50px;
+  width: 100%;
   background-color: white;
-  height: 200px;
-  width: 200px;
 }
 
-.create-room-btn{
+.room-bar-main{
+  display: flex;
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
 
+.rooms{
+  display: flex;
+}
+
+.room{
+  background-color: gray;
+  height: 200px;
+  width: 200px;
+  margin-left: 20px;
+}
+
+.room-page{
+  text-decoration: none;
+}
+
+.room-name{
+  text-decoration: none;
+  color: white;
+  font-size: 25px;
+  padding: 10px;
+}
+
+.room-explanation{
+  margin-top: 15px;
+  padding: 5px;
+  color: black;
 }
