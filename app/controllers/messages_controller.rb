@@ -6,6 +6,7 @@ class MessagesController < ApplicationController
     if @message.save
       redirect_to room_path(@room.id)
     else
+      @messages = @room.messages.includes(:user)
       render template: "rooms/show"
     end
   end
