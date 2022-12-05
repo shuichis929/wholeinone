@@ -1,0 +1,50 @@
+.room-main {
+  background-color: rgb(238, 237, 237);
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+}
+
+.room-main-box {
+  background-color: white;
+  width: 90vw;
+  display: flex;
+}
+
+.room-left-box {
+  width: 30%;
+  background-color: bisque;
+  box-shadow: 0px 10px 25px 0 rgba(0,0,0,0.5);
+}
+
+.room-show-name{
+  font-size: 35px;
+  padding: 10px;
+}
+
+.room-show-explanation{
+  padding-left: 10px;
+}
+
+.room-exit{
+  background: #aaa;
+  margin: 20px;
+  padding: 10px 20%;
+  margin-top: 70vh;
+}
+
+.room-exit-btn{
+  color: #fff;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+.room-right-box {
+  background-color: white;
+  width: 70%;
+  box-shadow: 0px 10px 25px 0 rgba(0,0,0,0.5);
+}
+
+.field_with_errors {
+  display: contents;
+}

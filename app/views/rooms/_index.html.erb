@@ -1,0 +1,23 @@
+<div class='room-top-bar'>
+  <div class="create-room">
+    <%= link_to "ルームを作成する", new_room_path, class:'create-room-btn' %>
+  </div>
+</div>
+<div class='room-bar-main'>
+  <div class="rooms">
+    <% @room.each do |room| %>
+      <%= link_to room_path(room.id), class:'room-page' do %>
+      <div class="room">
+        <div class="room-info">
+          <div class='room-name'>
+            <%= room.room_name %>
+          </div>
+          <div class='room-explanation'>
+            <%= room.explanation %>
+          </div>
+        </div>
+      </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
