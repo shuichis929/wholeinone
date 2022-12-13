@@ -22,21 +22,51 @@
       </div>
     </div>
     <div class='post-show-rightbox'>
-      <% if user_signed_in? && current_user.id == @post.user_id %>
-      <div class="post-more">
-        <%= link_to '投稿の編集', edit_post_path(@post.id), class:'post-edit'%>
-        <%= link_to '削除する', post_path(@post.id), method: :delete, class:'post-delete'%>
+      <div class='post-show-rightbox-top'>
+        <% if user_signed_in? && current_user.id == @post.user_id %>
+        <div class="post-more">
+          <%= link_to '投稿の編集', edit_post_path(@post.id), class:'post-edit'%>
+          <%= link_to '削除する', post_path(@post.id), method: :delete, class:'post-delete'%>
+        </div>
+        <% end %>
       </div>
-      <% end %>
-      <div class='post-comments'>
+      <div class='post-comment-title'>
         <h1>コメント一覧</h1>
       </div>
+      <div class='post-comments', id="comments">
+        <% @post.post_comments.each do |post_comment| %>
+          <div class="message">
+            <div class="upper-message">
+              <div class="message-user">
+                <div class='message-user-avatar'>
+                    <% if post_comment.user.avatar.present? %>
+                      <%= link_to image_tag(post_comment.user.avatar, size:'25x25', class:"message-user-img"), user_path(post_comment.user_id) %>
+                    <% else %>
+                      <%= image_tag "profile_default_picture.png", size:'25x25', class:'message-user-default-img' %>
+                    <% end %>
+                  </div>
+                <div class='message-user-name'>
+                  <%= link_to post_comment.user.nickname, user_path(post_comment.user_id), class:"message-nickname" %>
+                </div>
+              </div>
+              <div class="message-date">
+                <%= l post_comment.created_at %>
+              </div>
+            </div>
+            <div class="lower-message">
+              <div class="message-content">
+                <%= post_comment.text %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
       <div class="post_comment-form">
-        <% if user_signed_in? %>
-          <%= form_with model: [@post, @post_comment], id: "post_comment-form" do |f| %>
-            <%= f.text_area :text , class: "post_comment-text"%>
-            <%= f.submit "コメントをする", class: "post_comment-submit" %>
-          <% end %>
+        <%= form_with model: [@post, @post_comment], class:"post_comment-form", local: true do |f| %>
+        <div class="form-post_comment-input">
+          <%= f.text_field :text , class: "form-post_comment", placeholder: 'テキストを入力'%>
+        </div>
+          <%= f.submit "コメントをする", class: "form-post_comment-submit" %>
         <% end %>
       </div>
     </div>
