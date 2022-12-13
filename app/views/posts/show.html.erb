@@ -31,6 +31,14 @@
       <div class='post-comments'>
         <h1>コメント一覧</h1>
       </div>
+      <div class="post_comment-form">
+        <% if user_signed_in? %>
+          <%= form_with model: [@post, @post_comment], id: "post_comment-form" do |f| %>
+            <%= f.text_area :text , class: "post_comment-text"%>
+            <%= f.submit "コメントをする", class: "post_comment-submit" %>
+          <% end %>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
