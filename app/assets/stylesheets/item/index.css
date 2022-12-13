@@ -7,19 +7,19 @@
 .item-bar-main {
   width: 100%;
   height: 90%;
-  overflow-x: scroll;
-  overflow-y: hidden;
 }
 
 .item-lists{
   display: flex;
+  overflow-x: scroll;
+  overflow-y: hidden;
 }
 
 .item-list{
   position: relative;
   margin-left: 20px;
   height: 350px;
-  width: 400px;
+  width: 348px;
 }
 
 .item-user{

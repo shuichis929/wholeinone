@@ -97,3 +97,31 @@
   padding: 15px 35%;
   text-decoration: none;
 }
+
+.user-posts{
+  height: 570px;
+  width: 100%;
+  margin-top: 40px;
+  background-color: lightgray;
+  padding: 20px;
+}
+
+.user-posts-title {
+  font-size: 25px;
+  font-weight: bold;
+  height: 30px;
+  margin: 0 0 10px 20px;
+}
+
+.user-items{
+  height: 420px;
+  background-color: antiquewhite;
+  padding: 20px;
+}
+
+.user-items-title {
+  font-size: 25px;
+  font-weight: bold;
+  height: 30px;
+  margin: 0 0 10px 20px;
+}

@@ -38,5 +38,81 @@
     </div>
   </div>
 </div>
-
 <%# /ユーザー情報 %>
+
+<%# ユーザー投稿一覧 %>
+<div class='user-posts'>
+  <div class='user-posts-title'>
+    <%= @user.nickname %>の投稿一覧
+  </div>
+  <div class='post-contents'>
+    <div class='post-content'>
+      <div class='post-lists'>
+        <% @user.posts.each do |post| %>
+          <%= link_to post_path(post.id) do %>
+            <div class='post-list'>
+              <div class='post-img-content'>
+                <%= image_tag post.post_image, size:'348x350', class:"post-img" %>
+              </div>
+              <div class='post-user'>
+                <div class='post-user-avatar'>
+                  <% if post.user.avatar.present? %>
+                    <%= link_to image_tag(post.user.avatar, size:'35x35', class:"post-user-img"), user_path(post.user_id) %>
+                  <% else %>
+                    <%= image_tag "profile_default_picture.png", size:'35x35', class:'post-user-default-img' %>
+                  <% end %>
+                </div>
+                <div class='post-user-nickname'>
+                    <%= link_to post.user.nickname, user_path(post.user_id), class:"post-nickname" %>
+                </div>
+              </div>
+              <div class='text-box'>
+                <%= post.text %>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+<%# /ユーザー投稿一覧 %>
+
+<%# ユーザー商品一覧 %>
+<div class='user-items'>
+  <div class='user-items-title'>
+    <%= @user.nickname %>の商品一覧
+  </div>
+  <div class='item-lists'>
+    <% @user.items.each do |item| %>
+      <div class='item-list'>
+        <div class='item-user'>
+          <div class='item-user-avatar'>
+            <% if item.user.avatar.present? %>
+              <%= link_to image_tag(item.user.avatar, size:'35x35', class:"item-user-img"), user_path(item.user_id) %>
+            <% else %>
+              <%= image_tag "profile_default_picture.png", size:'35x35', class:'item-user-default-img' %>
+            <% end %>
+          </div>
+          <div class='item-user-nickname'>
+              <%= link_to item.user.nickname, user_path(item.user_id), class:"item-nickname" %>
+          </div>
+        </div>
+        <%= link_to item_path(item.id) do %>
+
+        <% if item.purchase.present? %>
+        <div class='sold-out'>
+          <span>Sold Out!!</span>
+        </div>
+        <% end %>
+
+        <%= image_tag item.item_image, size:'348x350', class:"item-img" %>
+        <div class='item-price'>
+          <span>¥<%= item.price %></span>
+        </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>
+<%# /ユーザー商品一覧 %>

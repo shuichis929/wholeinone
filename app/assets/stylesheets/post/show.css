@@ -58,9 +58,9 @@
 }
 
 .post-comments{
-  height: calc(100vh - 29vh);
   padding: 20px 40px 0;
   overflow: scroll;
+  height: calc(100vh - 208px);
 }
 
 .post_comment-form{
