@@ -78,5 +78,13 @@
         </tr>
       </tbody>
     </table>
+    <div class="item_comment-form">
+      <% if user_signed_in? %>
+        <%= form_with model: [@item, @item_comment], id: "item_comment-form", local: true do |f| %>
+          <%= f.text_area :text , class: "item_comment-text"%>
+          <%= f.submit "コメントをする", class: "item_comment-submit" %>
+        <% end %>
+      <% end %>
+    </div>
   </div>
 </div>
