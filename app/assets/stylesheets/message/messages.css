@@ -1,5 +1,5 @@
 .messages{
-  height: calc(100vh - 22vh);
+  height: calc(100vh - 22.5vh);
   background-color: #FAFAFA;
   padding: 20px 40px 0;
   overflow: scroll;

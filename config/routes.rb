@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   end
   resources :items do
     resources :purchases, only: [:index, :create]
+    resources :item_comments, only: :create
   end
   resources :rooms, only: [:index, :new, :create, :show] do
     resources :messages, only: [:index, :create]

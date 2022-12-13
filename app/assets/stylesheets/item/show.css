@@ -111,3 +111,30 @@
   font-size: 14px;
   display: flex;
 }
+
+.item_comments{
+  width: 80%;
+}
+
+.item_comment{
+  margin: 10px 0;
+}
+
+.item_comment-form{
+  display: flex;
+  width: 600px;
+}
+
+.item_comment-text{
+  display: block;
+  margin-top: 20px;
+  width: 100%;
+  height: 50px;
+  padding: 10px;
+}
+
+.item_comment-submit{
+  display: block;
+  margin-top: 20px;
+  margin-left: 10px;
+}
