@@ -11,6 +11,9 @@ Rails.application.routes.draw do
   resources :items do
     resources :purchases, only: [:index, :create]
     resources :item_comments, only: :create
+    collection do
+      get 'search'
+    end
   end
   resources :rooms, only: [:index, :new, :create, :show] do
     resources :messages, only: [:index, :create]
