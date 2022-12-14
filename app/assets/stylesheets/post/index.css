@@ -1,3 +1,7 @@
+.main {
+  background: #f8f8f8;
+}
+
 .post-contents {
   overflow-x: scroll;
   overflow-y: hidden;
