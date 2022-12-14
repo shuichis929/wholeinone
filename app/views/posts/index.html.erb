@@ -42,6 +42,17 @@
     <div class='item-top-bar'>
       <%= link_to '出品する', new_item_path %>
     </div>
+    <h3><%= link_to '商品検索', search_items_path%></h3>
+    <div class='search-bar-contents'>
+    <%= search_form_for Item.ransack(params[:q]), url: search_items_path, html: {class: "search-form"} do |f| %>
+      <%= f.text_field :item_name, placeholder: '商品名から探す', class: 'input-box' %>
+      <br>
+      <%= f.label :submit, class: "search-button" do %>
+        <input type="submit" value="検索" class="send">
+        <%= f.submit :submit, id: "q_submit", style: "display: none;"%>
+      <% end %>
+    <% end %>
+  </div>
     <div class='item-bar-main'>
       <%= render partial: 'items/index' %>
     </div>
