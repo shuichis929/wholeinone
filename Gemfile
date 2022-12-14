@@ -65,6 +65,7 @@ gem 'mini_magick'
 gem 'active_hash'
 gem "aws-sdk-s3", require: false
 gem 'payjp'
+gem 'ransack'
 
 group :production do
   gem 'unicorn', '5.4.1'
