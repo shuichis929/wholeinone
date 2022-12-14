@@ -21,6 +21,10 @@ class RoomsController < ApplicationController
     @message = Message.new
     @messages = @room.messages.includes(:user)
   end
+
+  def search
+    @rooms = Room.search(params[:keyword])
+  end
   
   private
 
