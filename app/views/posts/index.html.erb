@@ -2,62 +2,53 @@
 
 <div class='main'>
   <div class='post-bar'>
-    <%= link_to '投稿する', new_post_path %>
-    <%= form_with(url: search_posts_path, local: true, method: :get, class: "search-form") do |form| %>
-      <%= form.text_field :keyword, placeholder: "投稿を検索する", class: "search-input" %>
-      <%= form.submit "検索", class: "search-btn" %>
-    <% end %>
-    <h2 class='title'>新規投稿一覧</h2>
+    <div class='top-bar'>
+      <div class='new'>
+        <%= link_to '投稿する', new_post_path ,class:'new-btn' %>
+      </div>
+      <div class='search'>
+        <%= form_with(url: search_posts_path, local: true, method: :get, class: "search-form") do |form| %>
+          <%= form.text_field :keyword, placeholder: "投稿を検索する", class: "search-input" %>
+          <%= form.submit "検索", class: "search-btn" %>
+        <% end %>
+      </div>
+    </div>
+    <div class='bar-title'>新規投稿一覧</div>
     <div class='post-contents'>
-      <div class='post-content'>
-        <div class='post-lists'>
-          <% @post.each do |post| %>
-            <%= link_to post_path(post.id) do %>
-              <div class='post-list'>
-                <div class='post-img-content'>
-                  <%= image_tag post.post_image, size:'348x350', class:"post-img" %>
+      <div class='post-lists'>
+        <% @post.each do |post| %>
+          <%= link_to post_path(post.id) do %>
+            <div class='post-list'>
+              <div class='post-img-content'>
+                <%= image_tag post.post_image, size:'348x350', class:"post-img" %>
+              </div>
+              <div class='post-user'>
+                <div class='post-user-avatar'>
+                  <% if post.user.avatar.present? %>
+                    <%= link_to image_tag(post.user.avatar, size:'35x35', class:"post-user-img"), user_path(post.user_id) %>
+                  <% else %>
+                    <%= image_tag "profile_default_picture.png", size:'35x35', class:'post-user-default-img' %>
+                  <% end %>
                 </div>
-                <div class='post-user'>
-                  <div class='post-user-avatar'>
-                    <% if post.user.avatar.present? %>
-                      <%= link_to image_tag(post.user.avatar, size:'35x35', class:"post-user-img"), user_path(post.user_id) %>
-                    <% else %>
-                      <%= image_tag "profile_default_picture.png", size:'35x35', class:'post-user-default-img' %>
-                    <% end %>
-                  </div>
-                  <div class='post-user-nickname'>
-                      <%= link_to post.user.nickname, user_path(post.user_id), class:"post-nickname" %>
-                  </div>
-                </div>
-                <div class='text-box'>
-                  <%= post.text %>
+                <div class='post-user-nickname'>
+                    <%= link_to post.user.nickname, user_path(post.user_id), class:"post-nickname" %>
                 </div>
               </div>
-            <% end %>
+              <div class='text-box'>
+                <%= post.text %>
+              </div>
+            </div>
           <% end %>
+        <% end %>
       </div>
     </div>
   </div>
   <div class='item-bar'>
-    <div class='item-top-bar'>
-      <%= link_to '出品する', new_item_path %>
-    </div>
-    <h3><%= link_to '商品検索', search_items_path%></h3>
-    <div class='search-bar-contents'>
-    <%= search_form_for Item.ransack(params[:q]), url: search_items_path, html: {class: "search-form"} do |f| %>
-      <%= f.text_field :item_name, placeholder: '商品名から探す', class: 'input-box' %>
-      <br>
-      <%= f.label :submit, class: "search-button" do %>
-        <input type="submit" value="検索" class="send">
-        <%= f.submit :submit, id: "q_submit", style: "display: none;"%>
-      <% end %>
-    <% end %>
-  </div>
-    <div class='item-bar-main'>
-      <%= render partial: 'items/index' %>
-    </div>
+    <%= render partial: 'items/index' %>
   </div>
   <div class='room-bar'>
     <%= render partial: 'rooms/index' %>
   </div>
 </div>
+
+<%= render "shared/footer" %>

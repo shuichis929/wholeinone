@@ -1,23 +1,21 @@
-.item-top-bar {
-  width: 100%;
-  height: 10%;
-  background-color: white;
+.item-search-page{
+  margin-left: 30px;
 }
 
-.item-bar-main {
-  width: 100%;
-  height: 90%;
+.item-search-page-btn{
+  text-decoration: none;
 }
 
 .item-lists{
   display: flex;
   overflow-x: scroll;
   overflow-y: hidden;
+  margin-left: 20px;
 }
 
 .item-list{
   position: relative;
-  margin-left: 20px;
+  margin-left: 10px;
   height: 350px;
   width: 348px;
 }

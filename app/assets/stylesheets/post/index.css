@@ -2,6 +2,54 @@
   background: #f8f8f8;
 }
 
+.top-bar{
+  height: 70px;
+  display: flex;
+  align-items: center;
+  padding-left: 60px;
+}
+
+.new{
+  height: 40px;
+  width: 100px;
+  background-color: burlywood;
+  border-radius: 5px;
+  text-align: center;
+  padding: 10px 0;
+  border: 1px solid gray;
+}
+
+.new-btn{
+  text-decoration: none;
+  color: white;
+  font-size: large;
+  font-weight: bold;
+}
+
+.search{
+  margin-left: 30px;
+}
+
+.search-form{
+  display: flex;
+}
+
+.search-input{
+  padding: 5px 50px 5px 10px;
+}
+
+.search-btn{
+  padding: 5px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.bar-title{
+  font-size: large;
+  font-weight: bold;
+  margin: 10px 0 5px 70px;
+}
+
 .post-contents {
   overflow-x: scroll;
   overflow-y: hidden;
@@ -9,7 +57,7 @@
 
 .post-lists {
   display: flex;
-  margin: 0 0 0 40px;
+  margin-left: 20px;
 }
 
 .post-list {

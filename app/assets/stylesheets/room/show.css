@@ -1,18 +1,17 @@
 .room-main {
   background-color: rgb(238, 237, 237);
-  height: 90vh;
   display: flex;
   justify-content: center;
 }
 
 .room-main-box {
-  background-color: white;
-  width: 90vw;
+  width: 90%;
+  height: 100%;
   display: flex;
 }
 
 .room-left-box {
-  width: 30%;
+  width: 330px;
   background-color: bisque;
   box-shadow: 0px 10px 25px 0 rgba(0,0,0,0.5);
 }
@@ -29,7 +28,7 @@
 .room-exit{
   background: #aaa;
   margin: 20px;
-  padding: 10px 20%;
+  padding: 10px 70px;
   margin-top: 70vh;
 }
 
@@ -41,7 +40,7 @@
 
 .room-right-box {
   background-color: white;
-  width: 70%;
+  width: 930px;
   box-shadow: 0px 10px 25px 0 rgba(0,0,0,0.5);
 }
 

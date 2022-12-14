@@ -2,4 +2,33 @@
   width: 100vw;
   height: 40vh;
   background-color: green;
+  padding: 40px 0;
+}
+
+.footer-contents {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5vh;
+}
+
+.furima-details {
+  margin: 0 4vw;
+}
+
+.footer-content-head {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: white;
+}
+
+.footer-link {
+  color: #FFF;
+  font-size: 12px;
+  line-height: 30px;
+  margin-left: 20px;
+}
+
+.footer>p {
+  font-size: 14px;
 }

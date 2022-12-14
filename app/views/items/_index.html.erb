@@ -1,3 +1,22 @@
+<div class='top-bar'>
+  <div class='new'>
+    <%= link_to '出品する', new_item_path, class:'new-btn' %>
+  </div>
+  <div class='search'>
+    <%= search_form_for Item.ransack(params[:q]), url: search_items_path, html: {class: "search-form"} do |f| %>
+      <%= f.text_field :item_name, placeholder: '商品名から探す', class: 'search-input' %>
+      <br>
+      <%= f.label :submit, class: "search-button" do %>
+        <input type="submit" value="検索" class="search-btn">
+        <%= f.submit :submit, id: "q_submit", style: "display: none;" %>
+      <% end %>
+    <% end %>
+  </div>
+  <div class='item-search-page'>
+    <%= link_to '詳細検索ページへ', search_items_path, class:'item-search-page-btn' %>
+  </div>
+</div>
+<div class='bar-title'>新規商品一覧</div>
 <div class='item-lists'>
   <% @item.each do |item| %>
     <div class='item-list'>

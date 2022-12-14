@@ -12,13 +12,14 @@
 
 .rooms{
   display: flex;
+  margin-left: 20px;
 }
 
 .room{
-  background-color: gray;
+  background-color: darkgray;
   height: 200px;
   width: 200px;
-  margin-left: 20px;
+  margin-left: 15px;
 }
 
 .room-page{
