@@ -1,0 +1,9 @@
+.post-search-page{
+  background-color: lightgray;
+  height: 100vh;
+  width: 100vw;
+}
+
+.post-search-show{
+  padding: 20px 50px;
+}

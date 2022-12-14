@@ -1,23 +1,28 @@
 <%= render "shared/header" %>
 
-<%= form_with(url: search_rooms_path, local: true, method: :get, class: "search-form") do |form| %>
-  <%= form.text_field :keyword, placeholder: "ルーム名から探す", class: "search-input" %>
-  <%= form.submit "検索", class: "search-btn" %>
-<% end %>
-
-<div class="rooms">
-  <% @rooms.each do |room| %>
-    <%= link_to room_path(room.id), class:'room-page' do %>
-    <div class="room">
-      <div class="room-info">
-        <div class='room-name'>
-          <%= room.room_name %>
-        </div>
-        <div class='room-explanation'>
-          <%= room.explanation %>
-        </div>
-      </div>
-    </div>
+<div class='room-search-page'>
+  <div class='room-search-show'>
+    <%= form_with(url: search_rooms_path, local: true, method: :get, class: "search-form") do |form| %>
+      <%= form.text_field :keyword, placeholder: "ルーム名から探す", class: "search-input" %>
+      <%= form.submit "検索", class: "search-btn" %>
     <% end %>
-  <% end %>
+  </div>
+  <div class='room-bar-main'>
+    <div class="rooms">
+      <% @rooms.each do |room| %>
+        <%= link_to room_path(room.id), class:'room-page' do %>
+        <div class="room">
+          <div class="room-info">
+            <div class='room-name'>
+              <%= room.room_name %>
+            </div>
+            <div class='room-explanation'>
+              <%= room.explanation %>
+            </div>
+          </div>
+        </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
 </div>
