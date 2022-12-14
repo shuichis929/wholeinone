@@ -5,4 +5,12 @@ class Post < ApplicationRecord
 
   validates :text, presence: true, length: { maximum: 200 }
   validates :post_image, presence: true
+
+  def self.search(search)
+    if search != ""
+      Post.where('text LIKE(?)', "%#{search}%")
+    else
+      Post.all
+    end
+  end
 end
