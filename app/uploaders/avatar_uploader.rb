@@ -44,7 +44,7 @@ class AvatarUploader < CarrierWave::Uploader::Base
   # def filename
   #   "something.jpg" if original_filename
   # end
-  # mount_uploader :avatar, AvatarUploader
+  mount_uploader :avatar, AvatarUploader
 
   include CarrierWave::MiniMagick
   process resize_to_fit: [100, 100]
