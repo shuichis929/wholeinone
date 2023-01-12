@@ -13,5 +13,5 @@ Basic認証パスワード：sakuta929
 メールアドレス：sample@sample.com
 パスワード：sample123
 
-##　利用方法
+## 利用方法
 
