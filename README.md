@@ -8,4 +8,10 @@ Wholeinone
 http://54.65.251.130
 
 ## テスト用アカウント
+Basic認証ユーザー名：shuichi929
+Basic認証パスワード：sakuta929
+メールアドレス：sample@sample.com
+パスワード：sample123
+
+##　利用方法
 
