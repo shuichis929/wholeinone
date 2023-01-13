@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :authenticate_user!, only: [:new]
+  before_action :authenticate_user!, only: [:new, :edit, :destroy]
 
   def index
     @post = Post.order('created_at DESC')
@@ -28,6 +28,7 @@ class PostsController < ApplicationController
 
   def edit
     @post = Post.find(params[:id])
+    redirect_to action: :index unless current_user.id == @post.user_id
   end
 
   def update
